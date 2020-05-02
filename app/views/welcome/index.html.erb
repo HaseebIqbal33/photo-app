@@ -1,0 +1,73 @@
+<% if current_user %>
+  <h2>Welcome to Photo App</h2>
+<% else %>
+  <div class="jumbotron text-center">
+    <h3>Welcome to Photo Management App</h3>
+    <p class="lead">
+      You will love managing your photos with our application. Sign Up!
+    </p>    
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h3>Premium Plan</h3>
+        <ul>
+          <li>Unlimited Image Uploads</li>
+          <li>Responsive Design</li>
+          <li>Access Anywhere</li>
+          <%= link_to 'Sign Up - $10', new_user_registration_path, class: 'btn btn-success'%>
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <h3>Amaze Plan</h3>
+        <ul>
+          <li>Unlimited Image Uploads</li>
+          <li>Responsive Design</li>
+          <li>Access Anywhere</li>
+          <li>Unlimited Projects</li>
+          <%= link_to 'Sign Up - $20', new_user_registration_path, class: 'btn btn-success'%>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+<!-- 
+<p>Email in Production</p>
+<p> heroku addons:create sendgrid:starter</p>
+<p>heroku config:set SENDGRID_USERNAME=</p>
+<p>heroku config:set SENDGRID_PASSWORD=</p>
+<p>open .zshrc</p>
+<p>export SENDGRID_USERNAME=</p>
+<p>export SENDGRID_PASSWORD=</p>
+<h4>Now in enviorment.rb</h5>
+<p>
+  ActionMailer::Base.smtp_settings = {
+  :address => 'smtp.sendgrid.net',
+  :port => '587',
+  :authentication => :plain,
+  :user_name => ENV['SENDGRID_USERNAME'],
+  :password => ENV['SENDGRID_PASSWORD'],
+  :domain => 'heroku.com',
+  :enable_starttls_auto => true
+  }
+</p>
+
+<h4>Now in development.rb</h5>
+<p>
+  config.action_mailer.delivery_method = :test
+</p>
+<p>
+  config.action_mailer.default_url_options = { :host => 'http://localhost:3000'}
+</p>
+
+
+<h4>Now in production.rb</h5>
+<p>
+  config.action_mailer.delivery_method = :smtp
+</p>
+<p>
+  config.action_mailer.default_url_options = { :host => 'MyLiveSiteUrl.com', :protocol => 'https' }
+</p>
+ -->
